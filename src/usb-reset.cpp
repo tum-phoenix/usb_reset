@@ -40,7 +40,13 @@ int resetByFilename(const char* filename) {
         return false;
     }
 
-    int rc = ioctl(fd, USBDEVFS_RESET, 0);
+    int rc = ioctl(fd, USBDEVFS_CONNECTINFO, 0);
+    if (rc != 0) {
+        perror("Connectinfo failed");
+        return false;
+    }
+
+    rc = ioctl(fd, USBDEVFS_RESET, 0);
     if (rc < 0) {
         perror("Error in ioctl");
         return false;
