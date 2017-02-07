@@ -9,3 +9,6 @@ target_link_libraries(usb-reset usb-1.0)
 
 install(TARGETS usb-reset
         RUNTIME DESTINATION bin)
+
+add_custom_target(format clang-format -i ${SOURCES}
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
