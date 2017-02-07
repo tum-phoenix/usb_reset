@@ -1,0 +1,17 @@
+dist: trusty
+sudo: false
+language: cpp
+compiler:
+  - clang
+  - gcc
+
+script:
+  - mkdir build
+  - cd build
+  - cmake .. && make
+
+addons:
+  apt:
+    packages:
+      - libusb-1.0-0-dev
+
