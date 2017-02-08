@@ -1,8 +1,12 @@
 # USB Reset Script
 
+[![Build Status](https://travis-ci.org/tum-phoenix/usb_reset.svg?branch=master)](https://travis-ci.org/tum-phoenix/usb_reset)
+
 Resets a USB device by VendorID and ProductID
 
 ## Installation
+
+Install `libusb-1.0-0-dev` first.
 
     mkdir build
     cd build
